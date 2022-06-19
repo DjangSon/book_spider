@@ -3,7 +3,8 @@ import json
 import requests
 from db import dbHelper
 
-class spider(object):
+
+class Spider(object):
     def __init__(self):
         self.dbHeper = dbHelper()
         self.url = 'https://www.qb5.la/quanben/'
@@ -49,6 +50,7 @@ class spider(object):
             href = li.a.get('href')
             self.parse_novel_chapter(href, novel_name)
             break
-        
-a_spider = spider()
+
+
+a_spider = Spider()
 a_spider.every_page_novel()
